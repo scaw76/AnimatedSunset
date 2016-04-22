@@ -4,9 +4,9 @@ import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.content.res.Resources;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +65,7 @@ public class SunsetFragment extends Fragment{
         heightAnimator.setInterpolator(new AccelerateInterpolator());
 
         ObjectAnimator sunsetSkyAnimator = ObjectAnimator
-                .ofInt(mSkyView, "backgroundColor", mBlueSkyColor,mSunsetSkyColor)
+                .ofInt(mSkyView, "backgroundColor", mBlueSkyColor, mSunsetSkyColor)
                 .setDuration(3000);
         sunsetSkyAnimator.setEvaluator(new ArgbEvaluator());
 
@@ -73,14 +73,17 @@ public class SunsetFragment extends Fragment{
                 .ofInt(mSkyView,"backgroundColor", mSunsetSkyColor, mNightSkyColor)
                 .setDuration(1500);
 
+        nightSkyAnimator.setEvaluator(new ArgbEvaluator());
 
         //heightAnimator.start();
         //sunsetSkyAnimator.start();
+
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet
                 .play(heightAnimator)
                 .with(sunsetSkyAnimator)
                 .before(nightSkyAnimator);
         animatorSet.start();
+    
     }
 }

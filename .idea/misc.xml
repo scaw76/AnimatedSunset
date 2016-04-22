@@ -34,10 +34,25 @@
           <State>
             <id />
           </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Control flow issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Naming conventionsJava</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Android</id>
+            <id>Java</id>
           </State>
         </selected-state>
       </profile-state>
